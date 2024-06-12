@@ -1,9 +1,10 @@
 export interface CreditCard {
-    id: number;
+
+    id: number | undefined;
     name: string;
     description: string;
     bankName: string;
-    maxcredit: number;
+    maxCredit: number;
     interestRate: number;
     active: boolean;
     recommendedScore: string;
