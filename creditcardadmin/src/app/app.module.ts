@@ -13,6 +13,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { MatListModule } from '@angular/material/list';
     MatPaginatorModule,
     MatSortModule,
     HttpClientModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

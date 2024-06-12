@@ -1,1 +1,24 @@
-<p>view works!</p>
+<h1>Credit Card Details</h1>
+
+<ng-container *ngIf="creditCardDetails">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{creditCardDetails.name}}</mat-card-title>
+            <mat-card-subtitle>{{creditCardDetails.bankName}}</mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+            <div>{{creditCardDetails.id}}</div>
+            <div>{{creditCardDetails.description}}</div>
+            <div>{{creditCardDetails.maxcredit}}</div>
+            <div>{{creditCardDetails.interestRate}}</div>
+            <div>{{creditCardDetails.active}}</div>
+            <div>{{creditCardDetails.recommendedScore}}</div>
+            <div>{{creditCardDetails.annualFee}}</div>
+            <div>{{creditCardDetails.termsAndConditions}}</div>
+            <div>{{creditCardDetails.createdDate}}</div>
+            <div>{{creditCardDetails.updatedDate}}</div>
+        </mat-card-content>
+      </mat-card>
+</ng-container>

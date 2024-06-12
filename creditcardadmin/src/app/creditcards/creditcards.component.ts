@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { CreditCardsService } from '../services/creditcards.service';
+import { CreditcardsService } from '../services/creditcards.service';
 
 
 
@@ -17,7 +17,7 @@ export class CreditcardsComponent {
 
   creditcards: CreditCard[] = [];
 
-  constructor(private creditCardsServices: CreditCardsService) {
+  constructor(private creditCardsServices: CreditcardsService) {
     this.creditCardsServices.getCreditCards().subscribe((data:CreditCard[]) => {
       this.creditcards = data;
 
@@ -30,7 +30,7 @@ export class CreditcardsComponent {
 
   dataSource = new MatTableDataSource(this.creditcards);
   
-  displayColumns = ["select", "id", "name", "description", "bankName", "maxCredit", "interestRate", "active", "recommendedScore"];
+  displayColumns = ["select", "id", "name", "description", "bankName", "maxCredit", "interestRate", "active", "recommendedScore", "actions"];
 
   selection = new SelectionModel(true, []);
 
