@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CreditCard } from 'src/app/models/credit-card';
+import { CreditcardsService } from 'src/app/services/creditcards.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,7 +11,10 @@ import { CreditCard } from 'src/app/models/credit-card';
 })
 export class AddComponent {
 
-  
+  constructor(private CreditcardsService: CreditcardsService, 
+    private router: Router){
+
+  }
 
   newCreditCard: CreditCard = {
     id: undefined,
@@ -28,5 +33,9 @@ export class AddComponent {
 
   saveCreditCard(){
     console.log("Form Submitted");
+    this.CreditcardsService.createCreditCard(this.newCreditCard).subscribe(data => {
+      alert("Credit Card Added");
+      this.router.navigate(['creditcards']);
+    })
   }
 }
